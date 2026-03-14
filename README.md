@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Comment parler à Allah pendant les épreuves
 
-## Getting Started
+Landing page de vente pour l'ebook de **Nana Fatouma Koutam**.
 
-First, run the development server:
+## Installation
+
+```bash
+npm install
+cp .env.local.example .env.local
+# Remplir les variables dans .env.local
+```
+
+## Placer le PDF
+
+Copier le fichier PDF de l'ebook dans :
+```
+private/ebook.pdf
+```
+
+## Lancer en développement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables d'environnement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_BASE_URL` | URL du site (ex: `https://monsite.com`) |
+| `RESEND_API_KEY` | Clé API Resend pour les emails |
+| `EMAIL_FROM` | Email expéditeur (domaine vérifié Resend) |
+| `CINETPAY_API_KEY` | Clé API CinetPay |
+| `CINETPAY_SITE_ID` | Site ID CinetPay |
+| `NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL` | URL checkout Lemon Squeezy |
+| `LEMONSQUEEZY_WEBHOOK_SECRET` | Secret webhook Lemon Squeezy |
 
-## Learn More
+## Webhook Lemon Squeezy
 
-To learn more about Next.js, take a look at the following resources:
+Dans votre tableau de bord Lemon Squeezy, configurer :
+- **URL** : `https://votre-domaine.com/api/lemonsqueezy/webhook`
+- **Événements** : `order_created`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Flux de paiement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **CinetPay** : Client saisit email → redirigé vers CinetPay → après paiement, `/api/cinetpay/notify` → email automatique
+2. **Lemon Squeezy** : Checkout Lemon Squeezy → webhook → email automatique
+3. **Virement WhatsApp** : Client vire manuellement → envoie reçu WhatsApp → vous déclenchez l'email
 
-## Deploy on Vercel
+## Déploiement (Vercel)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx vercel
+```
