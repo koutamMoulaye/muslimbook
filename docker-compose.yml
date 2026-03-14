@@ -7,8 +7,8 @@ services:
         NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL: ${NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL:-}
     container_name: muslimbook
     restart: unless-stopped
-    ports:
-      - "3001:3000"
+    expose:
+      - "3000"
     env_file:
       - .env
     environment:
