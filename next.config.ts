@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   serverExternalPackages: [],
   experimental: {},
   allowedDevOrigins: ["10.39.190.117"],
+  output: "standalone",
 };
 
 export default nextConfig;
