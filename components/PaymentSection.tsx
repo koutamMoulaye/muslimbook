@@ -116,7 +116,71 @@ export default function PaymentSection() {
         {/* 3 Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "24px" }}>
 
-          {/* ── BLOC A : Virement WhatsApp ── RECOMMANDÉ (en premier) */}
+          {/* ── BLOC A : LemonSqueezy ── EN PREMIER */}
+          <div style={{
+            background: "#ffffff",
+            borderRadius: "20px",
+            padding: "32px",
+            boxShadow: "0 8px 40px rgba(0,0,0,0.25)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            opacity: 0.85,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", flexWrap: "wrap" }}>
+              <span style={{ background: "#3b5bdb", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "4px 12px", borderRadius: "50px", letterSpacing: "0.5px" }}>
+                🌍 Europe & International
+              </span>
+              <span style={{ background: "#fef3c7", color: "#92400e", fontSize: "0.68rem", fontWeight: 700, padding: "3px 10px", borderRadius: "50px", border: "1px solid #f59e0b" }}>
+                🚧 Version suivante
+              </span>
+            </div>
+
+            <div>
+              <h3 style={{ fontFamily: "Georgia, serif", color: "#0f2d3d", fontSize: "1.3rem", fontWeight: 800, margin: "0 0 4px" }}>
+                Carte bancaire
+              </h3>
+              <p style={{ color: "#6b7280", fontSize: "0.85rem", margin: 0 }}>
+                Visa · Mastercard · Apple Pay · Google Pay
+              </p>
+            </div>
+
+            <div style={{ background: "#f0f4ff", border: "2px dashed #3b5bdb", borderRadius: "12px", padding: "12px", textAlign: "center" }}>
+              <span style={{ color: "#3b5bdb", fontWeight: 800, fontSize: "1.6rem" }}>7,50 €</span>
+            </div>
+
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              {["VISA", "Mastercard", "Apple Pay", "Google Pay"].map((logo) => (
+                <span key={logo} style={{ background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "6px", padding: "4px 10px", fontSize: "0.72rem", fontWeight: 700, color: "#9ca3af" }}>
+                  {logo}
+                </span>
+              ))}
+            </div>
+
+            <ComingSoonBadge />
+
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              style={{
+                display: "block",
+                background: "#d1d5db",
+                color: "#9ca3af",
+                borderRadius: "50px",
+                padding: "14px 20px",
+                fontSize: "0.9rem",
+                fontWeight: 700,
+                textAlign: "center",
+                textDecoration: "none",
+                cursor: "not-allowed",
+                marginTop: "auto",
+              }}
+            >
+              Disponible prochainement →
+            </a>
+          </div>
+
+          {/* ── BLOC B : Virement Manuel ── RECOMMANDÉ AFRIQUE */}
           <div style={{
             background: "#ffffff",
             borderRadius: "20px",
@@ -148,8 +212,8 @@ export default function PaymentSection() {
             </div>
 
             <div style={{ marginTop: "8px" }}>
-              <span style={{ background: "#c8a96e", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "4px 12px", borderRadius: "50px", letterSpacing: "0.5px" }}>
-                💬 Virement Direct
+              <span style={{ background: "#1a7a6e", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "4px 12px", borderRadius: "50px", letterSpacing: "0.5px" }}>
+                🌍 Afrique de l&apos;Ouest
               </span>
             </div>
 
@@ -302,70 +366,6 @@ export default function PaymentSection() {
             >
               {loading ? "Chargement..." : "Disponible prochainement →"}
             </button>
-          </div>
-
-          {/* ── BLOC C : LemonSqueezy ── */}
-          <div style={{
-            background: "#ffffff",
-            borderRadius: "20px",
-            padding: "32px",
-            boxShadow: "0 8px 40px rgba(0,0,0,0.25)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            opacity: 0.85,
-          }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", flexWrap: "wrap" }}>
-              <span style={{ background: "#3b5bdb", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "4px 12px", borderRadius: "50px", letterSpacing: "0.5px" }}>
-                🌍 Europe & International
-              </span>
-              <span style={{ background: "#fef3c7", color: "#92400e", fontSize: "0.68rem", fontWeight: 700, padding: "3px 10px", borderRadius: "50px", border: "1px solid #f59e0b" }}>
-                🚧 Version suivante
-              </span>
-            </div>
-
-            <div>
-              <h3 style={{ fontFamily: "Georgia, serif", color: "#0f2d3d", fontSize: "1.3rem", fontWeight: 800, margin: "0 0 4px" }}>
-                Carte bancaire
-              </h3>
-              <p style={{ color: "#6b7280", fontSize: "0.85rem", margin: 0 }}>
-                Visa · Mastercard · Apple Pay · Google Pay
-              </p>
-            </div>
-
-            <div style={{ background: "#f0f4ff", border: "2px dashed #3b5bdb", borderRadius: "12px", padding: "12px", textAlign: "center" }}>
-              <span style={{ color: "#3b5bdb", fontWeight: 800, fontSize: "1.6rem" }}>7,50 €</span>
-            </div>
-
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {["VISA", "Mastercard", "Apple Pay", "Google Pay"].map((logo) => (
-                <span key={logo} style={{ background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "6px", padding: "4px 10px", fontSize: "0.72rem", fontWeight: 700, color: "#9ca3af" }}>
-                  {logo}
-                </span>
-              ))}
-            </div>
-
-            <ComingSoonBadge />
-
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              style={{
-                display: "block",
-                background: "#d1d5db",
-                color: "#9ca3af",
-                borderRadius: "50px",
-                padding: "14px 20px",
-                fontSize: "0.9rem",
-                fontWeight: 700,
-                textAlign: "center",
-                textDecoration: "none",
-                cursor: "not-allowed",
-                marginTop: "auto",
-              }}
-            >
-              Disponible prochainement →
-            </a>
           </div>
 
         </div>
