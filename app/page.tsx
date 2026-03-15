@@ -28,10 +28,10 @@ export default function Home() {
         <p className="text-xs">
           Contact :{" "}
           <a
-            href="https://wa.me/22790905317"
+            href="https://wa.me/22606673333"
             className="text-yellow-300 hover:underline"
           >
-            WhatsApp +227 90 90 53 17
+            WhatsApp +226 06 67 33 33
           </a>
         </p>
       </footer>

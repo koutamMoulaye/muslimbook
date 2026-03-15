@@ -28,7 +28,7 @@ export default function GuaranteeSection() {
             pour un remboursement complet — sans question posée.
           </p>
           <a
-            href="https://wa.me/22790905317"
+            href="https://wa.me/22606673333"
             target="_blank"
             rel="noopener noreferrer"
             style={{

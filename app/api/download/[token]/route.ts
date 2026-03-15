@@ -30,7 +30,7 @@ export async function GET(
       <h1>Lien expiré ou invalide</h1>
       <p>Ce lien de téléchargement n'est plus valide.<br/>
       Contactez-nous sur WhatsApp pour obtenir un nouveau lien.</p>
-      <p><a href="https://wa.me/22790905317">💬 Contacter sur WhatsApp →</a></p>
+      <p><a href="https://wa.me/22606673333">💬 Contacter sur WhatsApp →</a></p>
       </div></body></html>
       `,
       { status: 410, headers: { "Content-Type": "text/html; charset=utf-8" } }

@@ -6,7 +6,7 @@ import Image from "next/image";
 const contactRows = [
   {
     label: "Wave",
-    number: "+227 90 90 53 17",
+    number: "+226 06 67 33 33",
     logo: "/wave-logo.png",
     logoBg: "#1A6BFF",
     logoW: 52,
@@ -14,7 +14,7 @@ const contactRows = [
   },
   {
     label: "Orange Money",
-    number: "+227 90 90 53 17",
+    number: "+226 06 67 33 33",
     logo: "/orangemoney-logo.svg",
     logoBg: "transparent",
     logoW: 60,
@@ -22,7 +22,7 @@ const contactRows = [
   },
   {
     label: "Nita",
-    number: "+227 90 90 53 17",
+    number: "+226 06 67 33 33",
     logo: "/nita-logo.svg",
     logoBg: "transparent",
     logoW: 48,
@@ -30,7 +30,7 @@ const contactRows = [
   },
   {
     label: "Zeyna",
-    number: "+227 90 90 53 17",
+    number: "+226 06 67 33 33",
     logo: "/zeyna-logo.svg",
     logoBg: "transparent",
     logoW: 52,
@@ -200,7 +200,7 @@ export default function PaymentSection() {
             </div>
 
             <a
-              href="https://wa.me/22790905317"
+              href="https://wa.me/22606673333"
               target="_blank"
               rel="noopener noreferrer"
               style={{
