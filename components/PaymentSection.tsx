@@ -125,14 +125,10 @@ export default function PaymentSection() {
             display: "flex",
             flexDirection: "column",
             gap: "16px",
-            opacity: 0.85,
           }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", flexWrap: "wrap" }}>
+            <div>
               <span style={{ background: "#3b5bdb", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "4px 12px", borderRadius: "50px", letterSpacing: "0.5px" }}>
                 🌍 Europe & International
-              </span>
-              <span style={{ background: "#fef3c7", color: "#92400e", fontSize: "0.68rem", fontWeight: 700, padding: "3px 10px", borderRadius: "50px", border: "1px solid #f59e0b" }}>
-                🚧 Version suivante
               </span>
             </div>
 
@@ -151,32 +147,31 @@ export default function PaymentSection() {
 
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
               {["VISA", "Mastercard", "Apple Pay", "Google Pay"].map((logo) => (
-                <span key={logo} style={{ background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "6px", padding: "4px 10px", fontSize: "0.72rem", fontWeight: 700, color: "#9ca3af" }}>
+                <span key={logo} style={{ background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "6px", padding: "4px 10px", fontSize: "0.72rem", fontWeight: 700, color: "#374151" }}>
                   {logo}
                 </span>
               ))}
             </div>
 
-            <ComingSoonBadge />
-
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href={lemonSqueezyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: "block",
-                background: "#d1d5db",
-                color: "#9ca3af",
+                background: "linear-gradient(135deg, #3b5bdb, #2b4cbc)",
+                color: "white",
                 borderRadius: "50px",
                 padding: "14px 20px",
                 fontSize: "0.9rem",
                 fontWeight: 700,
                 textAlign: "center",
                 textDecoration: "none",
-                cursor: "not-allowed",
+                boxShadow: "0 4px 20px rgba(59,91,219,0.4)",
                 marginTop: "auto",
               }}
             >
-              Disponible prochainement →
+              Payer par carte / Apple Pay / Google Pay →
             </a>
           </div>
 
