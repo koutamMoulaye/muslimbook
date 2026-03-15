@@ -17,7 +17,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Variables d'env nécessaires au build
-ARG NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL
+ARG NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL=https://nana-fatouma-koutam.lemonsqueezy.com/checkout/buy/efbb23bc-d70f-4e47-803b-bf35317f9559
 ENV NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL=$NEXT_PUBLIC_LEMONSQUEEZY_CHECKOUT_URL
 
 RUN npm run build
